@@ -78,7 +78,7 @@ class Card:
     def actions(self, choice, answer=None):
         if answer:
             if answer == 'Y' and choice in self.card:
-                self.card[self.card.index(choice)] = '-'
+                self.card[self.card.index(choice)] = 'X'
             elif answer == 'Y' and choice not in self.card:
                 self.stat = -1
             elif answer == 'N' and choice not in self.card:
