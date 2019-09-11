@@ -78,7 +78,7 @@ class Card:
     def actions(self, choice, answer=None):
         if answer:
             if answer == 'Y' and choice in self.card:
-                self.card[self.card.index(choice)] = '-'
+                self.card[self.card.index(choice)] = 'X'
             elif answer == 'Y' and choice not in self.card:
                 self.stat = -1
             elif answer == 'N' and choice not in self.card:
@@ -108,7 +108,7 @@ while abs(User.stat) + abs(Comp.stat) == 0:
     choice = Keg.pull_keg_out()
     User.card_inf()
     Comp.card_inf()
-    User.actions(choice, input('Do you want to cross the number out? (Y/N):'))
+    User.actions(choice, input('Do you want to cross the number out? (Y/N) Press Q if you want to quit:'))
     Comp.actions(choice)
 
 if User.stat == 1:
